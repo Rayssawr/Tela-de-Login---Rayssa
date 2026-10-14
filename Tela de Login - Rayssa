@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #855299;
+            display: flex;
+            justify-content: content;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            display: flex;
+            width: 820px;
+            height: 480px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .login-sidebar {
+            background: linear-gradient(135deg, #a78bfa, #6ef);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: content;
+            padding: 45px;
+            position: relative;
+            width: 350px;
+        }
+
+        .decoracoes {
+            position: absolute;
+            top: 0;
+            esquerda: 0;
+            largura: 100%;
+            altura: 100%;
+            overflow: oculto;
+            opacidade: 0.15;
+            ponteiro-eventos: nenhum;
+        }
+
+        .sidebar-content {
+            position: relative;
+            z-index: 2;
+            largura-maxima: 290px;
+        }
+
+        .sidebar-content h2 {
+            tamanho-da-fonte: 2.4rem;
+            margem-inferior: 15px;
+            fonte-peso: 600;
+            espacamento-entre-letras: -0.5px;
+        }
+
+        .sidebar-content p {
+            tamanho-da-fonte: 0.95rem;
+            altura-da-linha: 1.6;
+            opacidade: 0.9;
+        }
+
+        .login-formulario-caixa {
+            flex: 1;
+            preenchimento: 50px;
+            exibicao: flexivel;
+            flex-direcao: coluna;
+            justificar-conteudo: centralizado;
+            fundo: linear-gradiente(135graus, #41c1d9, #7c3aed);
+        }
+
+        .login-formulario-caixa h2 {
+            cor: #ffffff;
+            tamanho-da-fonte: 2.4rem;
+            margem-inferior: 35px;
+            fonte-peso: 700;
+        }
+
+        .grupo-de-entrada {
+            posicao: relativa;
+            margem-inferior: 22px;
+        }
+
+        .grupo-de-entrada i {
+            posicao: absoluta;
+            esquerda: 18px;
+            topo: 50%;
+            transformar: traduzirY(-50%);
+            cor: #94a3b8;
+            tamanho-da-fonte: 1.1rem;
+            z-indice: 2;
+        }
+
+        .entrada-grupo-de-entrada {
+            largura: 100%;
+            preenchimento: 14px 15px 14px 48px;
+            borda: 1px solida #cbd5e1;
+            borda-raio: 30px;
+            esboco: nenhum;
+            tamanho-da-fonte: 0.95rem;
+            cor: #334155;
+            transicao: todos 0.2s facilidade;
+            posicao: relativa;
+        }
+
+        .entrada-grupo-de-entrada:foco {
+            borda-cor: #a78bfa;
+            box-sombra: 0 0 0 3px rgba(167, 139, 250, 0.3);
+        }
+
+        .formulario-acoes {
+            exibicao: flexivel;
+            justificar-conteudo: espaco-entre;
+            alinhar-itens: centro;
+            margem-inferior: 35px;
+            tamanho-da-fonte: 0.85rem;
+        }
+
+        .lembre-de-mim {
+            exibicao: flexivel;
+            alinhar-itens: centro;
+            espacamento: 8px;
+            cor: #ddd6fe;
+            cursor: ponteiro;
+        }
+
+        .lembre-se.entrada-de-mim {
+            cursor: ponteiro;
+        }
+
+        .esqueci-senha {
+            cor: #ddd6fe;
+            texto-decoracao: nenhuma;
+            fonte-peso: 500;
+        }
+
+        .esqueci-senha:passar-o-mouse {
+            texto-decoracao: sublinhado;
+            cor: #ffffff;
+        }
+
+        .btn-enviar {
+            largura: 100%;
+            preenchimento: 15px;
+            fundo: #ffffff;
+            cor: #6d28d9;
+            borda: nenhuma;
+            borda-raio: 30px;
+            tamanho-da-fonte: 1rem;
+            fonte-peso: 600;
+            cursor: ponteiro;
+            transicao: opacidade 0.2s facilidade;
+            margem-inferior: 30px;
+            box-sombra: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-enviar:passar-o-mouse {
+            opacidade: 0.9;
+        }
+
+        .formulario-rodape {
+            texto-alinhamento: centro;
+            tamanho-da-fonte: 0.85rem;
+            cor: #ddd6fe;
+        }
+
+        .formulario-rodape a {
+            cor: #ffffff;
+            texto-decoracao: nenhuma;
+            fonte-peso: 600;
+        }
+
+        .form-footer a:hover {
+            texto-decoracao: sublinhado;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-sidebar">
+            <div class="decoracoes">
+                <span class="plus-one">+</span>
+                <span class="plus-two">+</span>
+                <span class="circle-one"></span>
+                <span class="circle-two"></span>
+            </div>
+            <div class="sidebar-content">
+                <h2>Bem-vindo de volta!</h2>
+                <p>Você pode fazer login para acessar com sua conta existente.</p>
+            </div>
+        </div>
+
+        <div class="login-form-box">
+            <h2>Entrar</h2>
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" placeholder="Nome de usuário">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Senha">
+                </div>
+                <div class="form-actions">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <span>Lembre-se de mim</span>
+                    </label>
+                    <a href="#" class="forgot-pass">Esqueceu sua senha?</a>
+                </div>
+                <button type="submit" class="btn-submit">Entrar</button>
+            </form>
+            <div class="form-footer">
+                <p>É novo por aqui? <a href="#">Criar uma conta</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
